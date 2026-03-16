@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Baseball Game</title>
+<style>
+body{
+font-family: Arial;
+background-color:#0a2a66;
+color:white;
+text-align:center;
+}
+
+button{
+padding:15px;
+font-size:20px;
+margin:10px;
+}
+
+#game{
+margin-top:30px;
+font-size:24px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>⚾ Baseball Home Run Game ⚾</h1>
+<p>Click swing and try to hit a home run!</p>
+
+<button onclick="swing()">Swing Bat</button>
+
+<div id="game">
+<p id="result">Press Swing to play</p>
+<p>Score: <span id="score">0</span></p>
+</div>
+
+<script>
+let score = 0;
+
+function swing(){
+
+let hit = Math.floor(Math.random()*3);
+
+if(hit == 0){
+document.getElementById("result").innerHTML="Strike!";
+}
+
+if(hit == 1){
+document.getElementById("result").innerHTML="Base Hit!";
+score = score + 1;
+}
+
+if(hit == 2){
+document.getElementById("result").innerHTML="HOME RUN!! ⚾🔥";
+score = score + 3;
+}
+
+document.getElementById("score").innerHTML=score;
+}
+</script>
+
+</body>
+</html>
